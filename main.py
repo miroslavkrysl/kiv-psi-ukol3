@@ -14,8 +14,8 @@ SUN_HOURS_MAX = 2
 def main():
     """
     Main function of the program.
-    It sends requests to Open Notify server to get information about ISS from ISS Location Now service
-    and to Sunrise Sunset service to get times of sunrise and sunset on current ISS location.
+    It sends requests to Open Notify - ISS Location Now online service to get information about ISS
+    and to Sunrise Sunset online service to get times of sunrise and sunset on current ISS location.
     Received data is used to determine observation conditions on the current ISS location.
     """
 
