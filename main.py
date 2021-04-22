@@ -14,9 +14,8 @@ SUN_HOURS_MAX = 2
 def main():
     """
     Main function of the program.
-    It sends requests to Open Notify server to get information about ISS
-    from ISS Location Now service and times of sunset, sunrise and solar noon
-    from Sunrise Sunset service.
+    It sends requests to Open Notify server to get information about ISS from ISS Location Now service
+    and to Sunrise Sunset service to get times of sunrise and sunset on current ISS location.
     Received data is used to determine observation conditions on the current ISS location.
     """
 
@@ -65,7 +64,6 @@ def main():
             # the `-6` is for removing timezone offset (+00:00)
             sunrise = datetime.fromisoformat(json['results']['sunrise'][:-6])
             sunset = datetime.fromisoformat(json['results']['sunset'][:-6])
-            solar_noon = datetime.fromisoformat(json['results']['solar_noon'][:-6])
 
         except ValueError:
             print("Error while fetching data from Sunrise Sunset service. Times is not in valid format.")
@@ -87,10 +85,12 @@ def main():
         day = False
 
     # compute before/after sunrise/sunset
-    if time <= sunrise:
+    delta_between_day = sunset - sunrise
+    delta_between_night = timedelta(hours=24) - delta_between_day
+    if time <= sunrise or time > sunset + delta_between_night / 2:
         phase_delta = sunrise - time
         phase_text = "before sunrise"
-    elif time <= solar_noon:
+    elif time <= sunrise + delta_between_day / 2:
         phase_delta = time - sunrise
         phase_text = "after sunrise"
     elif time <= sunset:
