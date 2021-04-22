@@ -24,6 +24,12 @@ It needs to be installed locally:
 pip install requests
 ```
 
+And to run the program:
+
+```
+python main.py
+```
+
 Alternatively you could use the Pipenv virtual environment.
 
 To install Pipenv:
@@ -32,7 +38,7 @@ To install Pipenv:
 pip install pipenv
 ```
 
-And then to run the program:
+And then to run the program (in project root):
 
 ```
 pipenv shell
