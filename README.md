@@ -5,8 +5,8 @@ Author: Miroslav Krýsl
 ## Description
 
 Simple International Space Station (ISS) location tool.
-It sends requests to *Open Notify - ISS Location Now* service server to get information about ISS
-and to *Sunrise Sunset* service to get times of sunrise and sunset on current ISS location.
+It sends requests to *Open Notify - ISS Location Now* online service to get information about ISS
+and to *Sunrise Sunset* online service to get times of sunrise and sunset on current ISS location.
 Received data is used to determine observation conditions on the current ISS location.
 
 **Open Notify - ISS Location Now**: http://open-notify.org/Open-Notify-API/ISS-Location-Now/

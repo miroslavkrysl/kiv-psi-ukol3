@@ -111,13 +111,13 @@ def main():
             or sunset + timedelta(hours=SUN_HOURS_MIN) <= time <= sunset + timedelta(hours=SUN_HOURS_MAX):
         ideal = True
 
-    print("-------------------- ISS location ---------------------")
-    print(f"latitude:\t\t\t\t\t{latitude:>8}")
-    print(f"longitude:\t\t\t\t\t{longitude:>8}")
-    print(f"UTC time:\t\t\t\t\t", time.strftime(DATETIME_FORMAT))
-    print("day/night:\t\t\t\t\t", "day" if day else "night")
-    print("day phase:\t\t\t\t\t", phase_delta_text, phase_text)
-    print("observation conditions:\t\t", "ideal" if ideal else "not ideal")
+    print("--------------- ISS location ----------------")
+    print("{:<25} {:>8}".format("latitude:", latitude))
+    print("{:<25} {:>8}".format("longitude:", longitude))
+    print("{:<25} {}".format("UTC time:", time.strftime(DATETIME_FORMAT)))
+    print("{:<25} {}".format("day/night:", "day" if day else "night"))
+    print("{:<25} {} {}".format("day phase:", phase_delta_text, phase_text))
+    print("{:<25} {}".format("observation conditions:", "ideal" if ideal else "not ideal"))
 
 
 if __name__ == '__main__':
