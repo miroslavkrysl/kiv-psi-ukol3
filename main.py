@@ -37,7 +37,7 @@ def main():
             print("Error while fetching data from ISS Location Now service. Timestamp is in invalid format.")
             return
 
-    except ConnectionError:
+    except requests.ConnectionError:
         print("Can not connect to ISS Location Now service.")
         return
     except ValueError:
@@ -69,7 +69,7 @@ def main():
             print("Error while fetching data from Sunrise Sunset service. Times is not in valid format.")
             return
 
-    except ConnectionError:
+    except requests.ConnectionError:
         print("Can not connect to from Sunrise Sunset service.")
         return
     except ValueError:
