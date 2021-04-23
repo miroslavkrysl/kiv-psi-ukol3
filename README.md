@@ -9,6 +9,10 @@ It sends requests to *Open Notify - ISS Location Now* online service to get info
 and to *Sunrise Sunset* online service to get times of sunrise and sunset on current ISS location.
 Received data is used to determine observation conditions on the current ISS location.
 
+In addition, to correctly calculate whether it is day or night, it is also necessary to fetch the sunset
+time from yesterday and sunrise time from tomorrow. The computation returns wrong
+results in some cases otherwise.
+
 **Open Notify - ISS Location Now**: http://open-notify.org/Open-Notify-API/ISS-Location-Now/
 
 **Sunset Sunrise**: https://sunrise-sunset.org/api
